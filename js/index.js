@@ -19,7 +19,7 @@ const login = () => {
     return;
   }
   saveSession(form.username.value);
-  window.location = "/public/home.html";
+  window.location = "/home.html";
 };
 
 function saveSession(data) {
@@ -34,6 +34,6 @@ function checkLogged() {
 
   if (logged) {
     saveSession(logged, session);
-    window.location.href = "/public/home.html";
+    window.location.href = "/home.html";
   }
 }
