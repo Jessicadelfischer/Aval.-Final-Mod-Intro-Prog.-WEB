@@ -4,40 +4,68 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-
     <link rel="stylesheet" href="/style/global.css" />
-  </head>
-  <body>
-    <div id="container">
-      <section class="esq">
-        <img src="/img/manpostit.gif" height="200px" alt="gifuser" />
-      </section>
 
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex justify-content-center">
       <form id="form">
-        <div id="titulo">
-          <h1>SISTEMA DE RECADOS</h1>
-          <br />
-          <img src="/img/8-account-solid.gif" height="90px" alt="gifuser" />
-        </div>
-        <div class="inputs">
+        <div class="header-bar1 container text-center form-group">
+          <h1 class="animation">Sistema de Recados</h1>
+          <img src="/img/icons8-usuário-de-gênero-neutro-64.png" alt="gifuser" />
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Usuário ou E-MAIL</label
+          >
           <input
-            id="input-username"
             type="text"
+            class="form-control"
+            id="input-username"
             placeholder="Usuário"
+            aria-describedby="emailHelp"
             name="username"
-          /><br />
+          />
+          <div id="emailHelp" class="form-text">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Senha</label>
           <input
+            type="password"
+            class="form-control"
             id="input-password"
             name="password"
-            type="password"
             placeholder="Senha"
           />
         </div>
-        <button type="button" id="btn-login" onclick="login()">LOGIN</button>
-        <a id="link" href="/public/criarConta.html">CRIAR CONTA</a>
+        <div class="row">
+            <div class="col ">
+              <p
+                id="criarConta"
+                class="text-center mt-2 form-"
+                data-bs-toggle="modal"
+                data-bs-target="#register-modal"
+              >
+                Ainda não tem conta?
+                <a class="btn-volta" href="/public/criarConta.html">Criar uma conta.</a>
+              </p>
+            </div>
+        <button type="submit" class="text-dark btn btn-light btn-outline-success "  id="btn-login"
+        onclick="login()">Entrar</button>
       </form>
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/index.js"></script>
   </body>
 </html>

@@ -7,32 +7,104 @@
     <title>Meus Recados</title>
     <link rel="stylesheet" href="/style/global.css" />
     <link rel="stylesheet" href="/style/home.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
-      <h1>Mural de Recados</h1>
+      <h1 class="text-center fs-1 animation">Mural de Recados</h1>
     </header>
     <main>
-      <div class="header-bar">
-        <form id="form-message">
-          <a id="link" href="./index.html">VOLTAR</a>
-          <input type="text" name="message" placeholder="Descrição" />
-          <input type="text" name="details" placeholder="Recado" />
-          <button type="button" onclick="saveMessage()">Salvar</button>
+      <!--Formulario de inserir recado-->
+      <div class="header-bar container text-center">
+        <form class="row row-cols-2 row-cols-md-4" id="form-message">
+          <input
+            class="col col-md-4"
+            type="text"
+            name="message"
+            placeholder="Descrição"
+          />
+          <input
+            class="col col-md-4"
+            type="text"
+            name="details"
+            placeholder="Recado"
+          />
+          <a
+            id="logoff"
+            href="./index.html"
+            class="text-black-50 col col-md-2 btn btn-outline-warning btn-voltar"
+            >Voltar</a
+          >
+          <button
+            type="button"
+            class="col col-md-2 btn btn-outline-info text-black-50"
+            onclick="saveMessage()"
+          >
+            Salvar
+          </button>
         </form>
       </div>
-
-      <table>
-        <thead class="table-head">
-          <th class="table-id">ID</th>
-          <th class="table-description">Descrição</th>
-          <th class="table-details">Recado</th>
-          <th class="table-buttons">Ação</th>
+      <!-- Tabela de exibição dos recados-->
+      <table class="table shadow-none p-2 mb-2 bg-light rounded table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="table-id text-center">ID</th>
+            <th scope="col" class="table-description text-center">Descrição</th>
+            <th scope="col" class="table-details text-center">Recado</th>
+            <th scope="col" class="table-buttons text-center">Ação</th>
+          </tr>
         </thead>
-        <tbody id="table-body"></tbody>
+        <tbody class="text-center" id="table-body">
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
+      <!-- modal de apagar -->
+      <div class="modal" tabindex="-1" id="Apagar">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Apagar Recado!!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>A exclusão é permanente. Deseja excluir mesmo esse recado?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="button" id="btn-apagar" class="btn btn-primary">
+                Apagar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/home.js"></script>
   </body>
 </html>

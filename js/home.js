@@ -33,15 +33,21 @@ function printMessages() {
           <td class="table-id">${index}</td>
           <td class="table-description">${message.description}</td>
           <td class="table-details">${message.details}</td>
-          <td class="table-buttons">
-            <button class="btn btn-delete" onClick="deleteMessage(${index})">Apagar</button>
-            <button class="btn btn-edit" onClick="editMessage(${index})">Editar</button>
+          <td class="table-buttons text-center"><button type="button" class="btn btn-success text-black-50 " onClick="editMessage(${index})">Editar</button>
+            <button type="button" class="btn btn-danger text-black-50 btn-delete" onClick="clickModal(${index})">Apagar</button>
           </td>
         </tr>
       `;
     });
   }
   document.getElementById("table-body").innerHTML = messagesHTML;
+}
+
+function clickModal(index) {
+  let modal = new bootstrap.Modal(document.getElementById("Apagar"));
+  const btnApagar = document.getElementById("btn-apagar");
+  btnApagar.setAttribute("onclick", `deleteMessage(${index})`);
+  modal.show();
 }
 
 function saveMessage() {
@@ -79,7 +85,7 @@ function editMessage(index) {
 checkLogged();
 printMessages();
 
-const btnBack = document.getElementById("link");
+const btnBack = document.getElementById("logoff");
 console.log(btnBack);
 btnBack.addEventListener("click", function (e) {
   e.preventDefault();

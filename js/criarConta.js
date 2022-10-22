@@ -13,7 +13,12 @@ const createAccount = () => {
   }
 
   if (user) {
-    alert("Usuário já cadastrado");
+    const inputs_user = document.getElementById("inputs_user");
+    inputs_user.innerHTML += `
+        <div class="alert alert-danger" role="alert">
+        Usuário já cadastrado
+        </div>
+        `;
   } else {
     if (verifyPassword(form.password.value, form["password-repeat"].value)) {
       localStorage.setItem(
@@ -25,8 +30,13 @@ const createAccount = () => {
         })
       );
     }
+    const inputs_pssword = document.getElementById("inputs_password");
+    inputs_pssword.innerHTML += `
+        <div class="alert alert-success" role="alert">
+        Conta Criada com sucesso! \n Volte e faça seu login!
+        </div>
+        `;
   }
-  alert("Conta Criada com sucesso! \n Volte e faça seu login!");
 
   form.innerHTML = form_blank.innerHTML;
 };
